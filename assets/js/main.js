@@ -39,6 +39,7 @@ $(".events__row").slick({
   slidesToScroll: 4,
   arrows: false,
   variableWidth: true,
+  variableHeight: true,
   touchThreshold: 15,
 });
 
