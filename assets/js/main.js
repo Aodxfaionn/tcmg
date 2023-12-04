@@ -39,6 +39,7 @@ $(".events__row").slick({
   slidesToScroll: 4,
   arrows: false,
   variableWidth: true,
+  touchThreshold: 15,
 });
 
 $(".clients__row").slick({
@@ -46,6 +47,7 @@ $(".clients__row").slick({
   slidesToScroll: 4,
   variableWidth: true,
   arrows: false,
+  touchThreshold: 15,
 });
 
 $(".review__row").slick({
@@ -53,6 +55,9 @@ $(".review__row").slick({
   slidesToShow: 2,
   slidesToScroll: 2,
   arrows: false,
+  variableWidth: true,
+  variableHeight: true,
+  touchThreshold: 15,
 });
 
 $(".shorts__row").slick({
@@ -60,6 +65,7 @@ $(".shorts__row").slick({
   slidesToScroll: 3,
   variableWidth: true,
   arrows: false,
+  touchThreshold: 15,
 });
 
 //прикрепляем клик по заголовкам acc-head
