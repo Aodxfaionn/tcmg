@@ -36,7 +36,7 @@ $(window).scroll(function () {
 $(".events__row").slick({
   infinite: true,
   slidesToShow: 4,
-  slidesToScroll: 4,
+  slidesToScroll: 1,
   arrows: false,
   variableWidth: true,
   variableHeight: true,
@@ -45,7 +45,7 @@ $(".events__row").slick({
 
 $(".clients__row").slick({
   slidesToShow: 4,
-  slidesToScroll: 4,
+  slidesToScroll: 1,
   variableWidth: true,
   arrows: false,
   touchThreshold: 15,
@@ -54,7 +54,7 @@ $(".clients__row").slick({
 $(".review__row").slick({
   variableWidth: true,
   slidesToShow: 2,
-  slidesToScroll: 2,
+  slidesToScroll: 1,
   arrows: false,
   variableWidth: true,
   variableHeight: true,
@@ -63,7 +63,7 @@ $(".review__row").slick({
 
 $(".shorts__row").slick({
   slidesToShow: 3,
-  slidesToScroll: 3,
+  slidesToScroll: 1,
   variableWidth: true,
   arrows: false,
   touchThreshold: 15,
@@ -79,206 +79,292 @@ function f_acc() {
   $(this).next().slideToggle(1000);
 }
 
-// gsap.from(".one-bg__skulptura", {
-//   x: -200,
-//   duration: 1.5,
-// });
+gsap.from(".one-bg__skulptura", {
+  x: -200,
+  duration: 1.5,
+});
 
-// gsap.from(".one-bg__skulptura-shadow", {
-//   x: -300,
-//   duration: 1.8,
-// });
+gsap.from(".one-bg__skulptura-shadow", {
+  x: -300,
+  duration: 1.8,
+});
 
-// gsap.from(".one-bg__text", {
-//   x: 50,
-//   duration: 1.5,
-// });
+gsap.from(".one-bg__text", {
+  x: 50,
+  duration: 1.5,
+});
 
-// gsap.from(".one-bg__glow", {
-//   x: -150,
-//   duration: 1,
-// });
+gsap.from(".one-bg__glow", {
+  x: -150,
+  duration: 1,
+});
 
-// gsap.fromTo(
-//   ".h1__title span",
-//   {
-//     opacity: 0,
-//   },
-//   {
-//     opacity: 1,
-//     stagger: 0.2,
-//     duration: 0.5,
-//     delay: 0.2,
-//   }
-// );
+gsap.fromTo(
+  ".h1__title span",
+  {
+    opacity: 0,
+  },
+  {
+    opacity: 1,
+    stagger: 0.2,
+    duration: 0.5,
+    delay: 0.2,
+  }
+);
 
-// gsap.fromTo(
-//   ".h1__name span",
-//   {
-//     y: -50,
-//     opacity: 0,
-//   },
-//   {
-//     y: 0,
-//     opacity: 1,
-//     duration: 1,
-//     stagger: 0.3,
-//     delay: 0.5,
-//   }
-// );
+gsap.fromTo(
+  ".h1__name span",
+  {
+    y: -50,
+    opacity: 0,
+  },
+  {
+    y: 0,
+    opacity: 1,
+    duration: 1,
+    stagger: 0.3,
+    delay: 0.5,
+  }
+);
 
-// gsap.from(".circle__fixed_h1", {
-//   opacity: 0,
-//   duration: 1,
-//   delay: 0.1,
-// });
+gsap.from(".circle__fixed_h1", {
+  opacity: 0,
+  duration: 1,
+  delay: 0.1,
+});
 
-// gsap.from(".circle__fixed_h1 .line__fixed", {
-//   width: 0,
-//   delay: 0.3,
-//   duration: 1,
-// });
+gsap.from(".circle__fixed_h1 .line__fixed", {
+  width: 0,
+  delay: 0.3,
+  duration: 1,
+});
 
-// gsap.from(".circle__fixed_sign-up", {
-//   opacity: 0,
-//   duration: 1,
-//   delay: 0.5,
-// });
+gsap.from(".circle__fixed_sign-up", {
+  opacity: 0,
+  duration: 1,
+  delay: 0.5,
+});
 
-// gsap.from(".circle__fixed_sign-up .line__fixed", {
-//   width: 0,
-//   delay: 0.7,
-//   duration: 1,
-// });
+gsap.from(".circle__fixed_sign-up .line__fixed", {
+  width: 0,
+  delay: 0.7,
+  duration: 1,
+});
 
-// gsap.from(".one__sign-up__btn", {
-//   opacity: 1,
-//   x: -100,
-//   duration: 1,
-// });
+gsap.from(".one__sign-up__btn", {
+  opacity: 1,
+  x: -100,
+  duration: 1,
+});
 
-// gsap.from(".one__sign-up__text", {
-//   opacity: 0,
-//   duration: 1,
-//   stagger: 0.2,
-//   delay: 1,
-// });
+gsap.from(".one__sign-up__text", {
+  opacity: 0,
+  duration: 1,
+  stagger: 0.2,
+  delay: 1,
+});
 
-// gsap.to(".two__circle-one", {
-//   scrollTrigger: {
-//     trigger: ".one",
-//     // markers: true,
-//     start: "top",
-//     end: "2000px",
-//     scrub: true,
-//   },
-//   rotation: -50,
-// });
+gsap.to(".two__circle-one", {
+  scrollTrigger: {
+    trigger: ".one",
+    // markers: true,
+    start: "top",
+    end: "2000px",
+    scrub: true,
+  },
+  rotation: -10,
+});
 
-// gsap.to(".two__circle-two", {
-//   scrollTrigger: {
-//     trigger: ".one",
-//     // markers: true,
-//     start: "500px",
-//     end: "1700px",
-//     scrub: true,
-//   },
-//   rotation: 70,
-// });
+gsap.to(".two__circle-two", {
+  scrollTrigger: {
+    trigger: ".one",
+    // markers: true,
+    start: "500px",
+    end: "1700px",
+    scrub: true,
+  },
+  rotation: 70,
+});
 
-// gsap.fromTo(
-//   ".two__img img",
-//   {
-//     rotation: -4,
-//     scale: 2,
-//     opacity: 0,
-//     display: "none",
-//   },
-//   {
-//     scrollTrigger: {
-//       trigger: ".one",
-//       // markers: true,
-//       start: "center",
-//       end: "500px",
-//       scrub: true,
-//     },
-//     scale: 0.8,
-//     opacity: 1,
-//     rotation: 0,
-//     delay: 2,
-//     display: "block",
-//   }
-// );
+gsap.fromTo(
+  ".two__img img",
+  {
+    scale: 2,
+    opacity: 0,
+  },
+  {
+    scrollTrigger: {
+      trigger: ".one",
+      // markers: true,
+      start: "bottom center",
+      scrub: true,
+    },
+    scale: 0.8,
+    opacity: 1,
+  }
+);
 
-// let typeSplit = new SplitType(".two__text", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.fromTo(
+  ".two__img img",
+  {
+    scale: 0.8,
+  },
+  {
+    scrollTrigger: {
+      trigger: ".one",
+      // markers: true,
+      start: "bottom top",
+      scrub: true,
+    },
+    scale: 1,
+  }
+);
 
-// gsap.from(".two__img-bg", {
-//   scrollTrigger: {
-//     trigger: ".two__text",
-//     start: "top center",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-// });
+gsap.from(".two__img-bg", {
+  scrollTrigger: {
+    trigger: ".one",
+    // markers: true,
+    start: "bottom top",
+    scrub: true,
+  },
+  stagger: {
+    from: "center",
+    amount: 0.5,
+  },
+  opacity: 0,
+  scale: 0.8,
+  delay: 2,
+});
 
-// gsap.from(".two__text .line", {
-//   y: "100%",
-//   opacity: 0,
-//   duration: 0.5,
-//   ease: "power1.out",
-//   stagger: 0.15,
-//   scrub: true,
-//   scrollTrigger: {
-//     trigger: ".two__text",
-//     start: "top center",
-//   },
-// });
+gsap.from(".two__text", {
+  scrollTrigger: {
+    trigger: ".one",
+    // markers: true,
+    start: "bottom center",
+    scrub: true,
+  },
+  opacity: 0,
+  duration: 2,
+  delay: 2,
+});
 
-// gsap.from(".three__item", {
-//   scrollTrigger: {
-//     trigger: ".two",
-//     // pin: true,
-//     start: "top top",
-//     end: "+=200px",
-//   },
-//   opacity: 0,
-// });
+gsap.from(".two__text_one", {
+  scrollTrigger: {
+    trigger: ".one",
+    // markers: true,
+    start: "bottom center",
+    scrub: true,
+  },
+  x: 300,
+  duration: 2,
+  delay: 2,
+});
 
-// gsap.from(".three__img", {
-//   scrollTrigger: {
-//     trigger: ".two",
-//     pin: true,
-//     start: "top top",
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   stagger: 0.1,
-//   rotation: -15,
-//   scale: 4,
-//   x: -70,
-// });
+gsap.from(".two__text_two", {
+  scrollTrigger: {
+    trigger: ".one",
+    // markers: true,
+    start: "bottom center",
+    scrub: true,
+  },
+  x: -300,
+  duration: 2,
+  delay: 2,
+});
 
-// let textAbs = new SplitType(".title-absolute", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(".three__item", {
+  scrollTrigger: {
+    trigger: ".three",
+    // markers: true,
+    start: "-70%",
+    end: "-20%",
+  },
+  opacity: 0,
+  y: -100,
+});
 
-// gsap.from(textAbs.chars, {
-//   scrollTrigger: {
-//     trigger: ".three",
-//     start: "+=100px center",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   y: -200,
-//   duration: 1,
-//   stagger: 0.1,
-// });
+gsap.from(".three__img", {
+  scrollTrigger: {
+    trigger: ".three",
+    // markers: true,
+    start: "-70%",
+    end: "-20%",
+  },
+  opacity: 0,
+  rotation: -15,
+  scale: 4,
+  x: -70,
+});
+
+gsap.from(".three__title", {
+  scrollTrigger: {
+    trigger: ".three",
+    // markers: true,
+    start: "-70%",
+    end: "-20%",
+  },
+  opacity: 0,
+  x: -100,
+});
+
+gsap.from(".three__hr", {
+  scrollTrigger: {
+    trigger: ".three",
+    // markers: true,
+    start: "-70%",
+    end: "-20%",
+  },
+  opacity: 0,
+  x: -100,
+});
+
+gsap.from(".three__text", {
+  scrollTrigger: {
+    trigger: ".three",
+    // markers: true,
+    start: "-70%",
+    end: "-20%",
+  },
+  opacity: 0,
+  x: -100,
+});
+
+let textAbs = new SplitType(".title-absolute", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
+
+if (window.innerWidth > 1365) {
+  gsap.from(textAbs.chars, {
+    scrollTrigger: {
+      trigger: ".three",
+      start: "-=50px center",
+      end: "center",
+      markers: true,
+      scrub: true,
+    },
+    opacity: 0,
+    y: -200,
+    duration: 1,
+    delay: 1,
+    stagger: 0.1,
+  });
+} else {
+  gsap.from(textAbs.chars, {
+    scrollTrigger: {
+      trigger: ".three",
+      start: "-40%",
+      end: "-10%",
+      // markers: true,
+      scrub: true,
+    },
+    opacity: 0,
+    y: -200,
+    duration: 2,
+    delay: 2,
+    stagger: 0.1,
+  });
+}
 
 // let textFive = new SplitType(".five .title-absolute", {
 //   types: "lines, words, chars",
@@ -847,7 +933,6 @@ function f_acc() {
 //   },
 //   background: "#fff",
 // });
-
 
 // gsap.to(".header a", {
 //   scrollTrigger: {
