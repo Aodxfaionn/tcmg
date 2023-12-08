@@ -829,7 +829,7 @@ section.two {
   text-transform: uppercase;
   transform: rotate(-3.068deg);
   position: absolute;
-  bottom: 12%;
+  bottom: 165px;
   left: -1%;
   text-shadow: 0px 1px 0 #1e1d1d, 0px -1px 0 #1e1d1d, 1px 0px 0 #1e1d1d,
     -1px 0px 0 #1e1d1d, 1px 1px 0 #1e1d1d, 1px -1px 0 #1e1d1d,
@@ -1868,12 +1868,13 @@ footer {
 
 .individual__content {
   position: relative;
-  background: #f1f1f1;
+  height: auto;
+  display: none;
   padding-top: 27px;
   padding-bottom: 0px;
   margin-bottom: 90px;
-  display: none;
   overflow: hidden;
+  background: #f1f1f1;
 }
 
 .individual__content__container {
@@ -2208,6 +2209,23 @@ section .individual.two__circle-two {
 
 .five__time__row .five__time__item:first-child .five__time__content {
   background: var(--Beige, #dbcbb3);
+}
+
+.individual__five__item:nth-child(2)
+  .five__time__row
+  .five__time__item:first-child
+  .five__time__content {
+  border: 2px solid #161616;
+  background: #090d1b;
+  color: #fdfdfd;
+}
+
+.individual__five__item:nth-child(3)
+  .five__time__row
+  .five__time__item:first-child
+  .five__time__content {
+  border: 2px solid #ffc700;
+  background: #ffc700;
 }
 
 .five__classes_block {
@@ -2618,7 +2636,6 @@ section .individual.two__circle-two {
     padding: 0px 13px 100px;
   }
   .three__img {
-    transform: scale(0.8);
     margin: -42px 0 0 38px;
   }
   .three__img img {
@@ -2694,7 +2711,7 @@ section .individual.two__circle-two {
     line-height: 23px;
   }
   .five__row {
-    gap: 150px;
+    gap: 100px;
   }
   .five__title {
     font-size: 78px;
@@ -2739,7 +2756,7 @@ section .individual.two__circle-two {
   }
   .five__bg-bottom {
     font-size: 234.07px;
-    top: 915px;
+    bottom: 190px;
     letter-spacing: -16.385px;
   }
   .six {
@@ -3392,7 +3409,7 @@ section .individual.two__circle-two {
     margin-bottom: 15px;
   }
   .five__bg-bottom {
-    top: 78%;
+    bottom: 210px;
     left: 0;
   }
   .individual__row {
@@ -3573,7 +3590,7 @@ section .individual.two__circle-two {
     line-height: 23px;
   }
   .about-us__three__title svg {
-    display: none;
+    display: none !important;
   }
   .about-us__two__content {
     margin-top: 132px;
@@ -3925,10 +3942,6 @@ section .individual.two__circle-two {
     width: 100%;
     margin-top: -25px;
   }
-  .about-us__three__title svg {
-    bottom: unset;
-    top: -300px;
-  }
   .individual__item::before {
     width: 69%;
   }
@@ -4179,7 +4192,7 @@ section .individual.two__circle-two {
     width: 152px;
   }
   .five__bg-bottom {
-    top: 88%;
+    bottom: 90px;
     left: -166px;
     font-size: 163.994px;
   }

@@ -74,10 +74,20 @@ $(".individual__row .individual__item").on("click", f_acc);
 
 function f_acc() {
   //скрываем все кроме того, что должны открыть
-  $(".individual__row .individual__content").not($(this).next()).slideUp(1000);
+  $(".individual__row .individual__content").not($(this).next()).slideUp(500);
   // открываем или скрываем блок под заголовком, по которому кликнули
   $(this).next().slideToggle(1000);
 }
+
+// const itemHead = document.querySelectorAll('.individual__row .individual__item');
+
+// itemHead.forEach((item) => {
+//   item.addEventListener('click', function() {
+//     for (item of itemHead) item.nextElementSibling.style.display = 'none';
+//     const activeElem = this.nextElementSibling;
+//     activeElem.style.display = 'block';
+//   })
+// })
 
 gsap.from(".one-bg__skulptura", {
   x: -200,
@@ -186,109 +196,120 @@ gsap.to(".two__circle-two", {
   rotation: 70,
 });
 
-gsap.fromTo(
-  ".two__img img",
-  {
-    scale: 2,
-    opacity: 0,
+gsap.from(".two__img img", {
+  scrollTrigger: {
+    trigger: ".one",
+    // markers: true,
+    start: "bottom center",
   },
-  {
+  scale: 2,
+  opacity: 0,
+});
+
+gsap.from(".two__img-bg", {
+  scrollTrigger: {
+    trigger: ".one",
+    // markers: true,
+    start: "bottom",
+    scrub: true,
+  },
+  opacity: 0,
+  scale: 0,
+  delay: 2,
+});
+
+if (window.innerWidth > 743) {
+  gsap.from(".two__text", {
     scrollTrigger: {
       trigger: ".one",
       // markers: true,
       start: "bottom center",
       scrub: true,
     },
-    scale: 0.8,
-    opacity: 1,
-  }
-);
+    opacity: 0,
+    duration: 2,
+    delay: 2,
+  });
 
-gsap.fromTo(
-  ".two__img img",
-  {
-    scale: 0.8,
-  },
-  {
+  gsap.from(".two__text_one", {
     scrollTrigger: {
       trigger: ".one",
       // markers: true,
-      start: "bottom top",
+      start: "bottom center",
       scrub: true,
     },
-    scale: 1,
-  }
-);
+    x: 300,
+    duration: 2,
+    delay: 2,
+  });
 
-gsap.from(".two__img-bg", {
-  scrollTrigger: {
-    trigger: ".one",
-    // markers: true,
-    start: "bottom top",
-    scrub: true,
-  },
-  stagger: {
-    from: "center",
-    amount: 0.5,
-  },
-  opacity: 0,
-  scale: 0.8,
-  delay: 2,
-});
+  gsap.from(".two__text_two", {
+    scrollTrigger: {
+      trigger: ".one",
+      // markers: true,
+      start: "bottom center",
+      scrub: true,
+    },
+    x: -300,
+    duration: 2,
+    delay: 2,
+  });
+} else {
+  gsap.from(".two__text", {
+    scrollTrigger: {
+      trigger: ".two",
+      start: "-=300px top",
+      end: "-=100px top",
+      // markers: true,
+      scrub: true,
+    },
+    opacity: 0,
+    duration: 2,
+    delay: 2,
+  });
 
-gsap.from(".two__text", {
-  scrollTrigger: {
-    trigger: ".one",
-    // markers: true,
-    start: "bottom center",
-    scrub: true,
-  },
-  opacity: 0,
-  duration: 2,
-  delay: 2,
-});
+  gsap.from(".two__text_one", {
+    scrollTrigger: {
+      trigger: ".two",
+      start: "-=300px top",
+      end: "-=100px top",
+      // markers: true,
+      scrub: true,
+    },
+    x: 300,
+    duration: 2,
+    delay: 2,
+  });
 
-gsap.from(".two__text_one", {
-  scrollTrigger: {
-    trigger: ".one",
-    // markers: true,
-    start: "bottom center",
-    scrub: true,
-  },
-  x: 300,
-  duration: 2,
-  delay: 2,
-});
-
-gsap.from(".two__text_two", {
-  scrollTrigger: {
-    trigger: ".one",
-    // markers: true,
-    start: "bottom center",
-    scrub: true,
-  },
-  x: -300,
-  duration: 2,
-  delay: 2,
-});
+  gsap.from(".two__text_two", {
+    scrollTrigger: {
+      trigger: ".two",
+      start: "-=300px top",
+      end: "-=100px top",
+      // markers: true,
+      scrub: true,
+    },
+    x: -300,
+    duration: 2,
+    delay: 2,
+  });
+}
 
 gsap.from(".three__item", {
   scrollTrigger: {
     trigger: ".three",
     // markers: true,
-    start: "-70%",
-    end: "-20%",
+    start: "top bottom",
   },
   opacity: 0,
   y: -100,
 });
 
-gsap.from(".three__img", {
+gsap.from(".three__img img", {
   scrollTrigger: {
     trigger: ".three",
     // markers: true,
-    start: "-70%",
-    end: "-20%",
+    start: "top bottom",
   },
   opacity: 0,
   rotation: -15,
@@ -300,8 +321,7 @@ gsap.from(".three__title", {
   scrollTrigger: {
     trigger: ".three",
     // markers: true,
-    start: "-70%",
-    end: "-20%",
+    start: "top bottom",
   },
   opacity: 0,
   x: -100,
@@ -311,8 +331,7 @@ gsap.from(".three__hr", {
   scrollTrigger: {
     trigger: ".three",
     // markers: true,
-    start: "-70%",
-    end: "-20%",
+    start: "top bottom",
   },
   opacity: 0,
   x: -100,
@@ -322,8 +341,7 @@ gsap.from(".three__text", {
   scrollTrigger: {
     trigger: ".three",
     // markers: true,
-    start: "-70%",
-    end: "-20%",
+    start: "top bottom",
   },
   opacity: 0,
   x: -100,
@@ -340,12 +358,10 @@ if (window.innerWidth > 1365) {
       trigger: ".three",
       start: "-=50px center",
       end: "center",
-      markers: true,
-      scrub: true,
+      // markers: true,
     },
     opacity: 0,
     y: -200,
-    duration: 1,
     delay: 1,
     stagger: 0.1,
   });
@@ -356,624 +372,625 @@ if (window.innerWidth > 1365) {
       start: "-40%",
       end: "-10%",
       // markers: true,
-      scrub: true,
     },
     opacity: 0,
     y: -200,
-    duration: 2,
-    delay: 2,
+    delay: 1,
     stagger: 0.1,
   });
 }
 
-// let textFive = new SplitType(".five .title-absolute", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(".four__bg-top", {
+  scrollTrigger: {
+    trigger: ".three",
+    start: "center center",
+    // markers: true,
+    scrub: true,
+  },
+  x: -700,
+});
 
-// gsap.from(textFive.chars, {
-//   scrollTrigger: {
-//     trigger: ".five",
-//     start: "+=300px center",
-//     end: "+=500px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   y: -200,
-//   stagger: 0.1,
-// });
+gsap.from(".four__bg-bottom", {
+  scrollTrigger: {
+    trigger: ".three",
+    start: "center center",
+    // markers: true,
+    scrub: true,
+  },
+  x: 700,
+});
 
-// let textSix = new SplitType(".six .title-absolute", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(".five__item_last", {
+  scrollTrigger: {
+    trigger: ".four",
+    start: "top",
+    end: "center",
+    // markers: true,
+  },
+  y: -350,
+});
 
-// gsap.from(textSix.chars, {
-//   scrollTrigger: {
-//     trigger: ".five",
-//     start: "+=950px top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   y: -200,
-//   duration: 1,
-//   stagger: 0.1,
-// });
+gsap.from(".five__item svg", {
+  scrollTrigger: {
+    trigger: ".four",
+    start: "top",
+    end: "center",
+    // markers: true,
+  },
+  y: 100,
+  opacity: 0,
+});
 
-// let textSeven = new SplitType(".seven .title-absolute", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+let five = new SplitType(".five__title", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(textSeven.chars, {
-//   scrollTrigger: {
-//     trigger: ".seven",
-//     start: "-=300px top",
-//     end: "+=200px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   y: -200,
-//   duration: 0.5,
-//   stagger: 0.1,
-// });
+gsap.from(five.chars, {
+  scrollTrigger: {
+    trigger: ".four",
+    start: "top",
+    end: "center",
+    // markers: true,
+  },
+  opacity: 0.3,
+  ease: "power1.out",
+  stagger: 0.1,
+});
 
-// let textEight = new SplitType(".eight .title-absolute", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+if (window.innerWidth > 743) {
+  gsap.from(".individual__item", {
+    scrollTrigger: {
+      trigger: ".five",
+      start: "top center",
+      end: "top bottom",
+      // markers: true,
+    },
+    opacity: 0,
+    x: -70,
+  });
+} else {
+  gsap.from(".individual__item", {
+    scrollTrigger: {
+      trigger: ".five",
+      start: "center center",
+      // markers: true,
+    },
+    opacity: 0,
+    x: -70,
+  });
+}
 
-// gsap.from(textEight.chars, {
-//   scrollTrigger: {
-//     trigger: ".seven",
-//     start: "+=200px top",
-//     end: "+=200px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   y: -200,
-//   duration: 0.5,
-//   stagger: 0.1,
-// });
+let textFive = new SplitType(".five .title-absolute", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// let textReview = new SplitType(".review .title-absolute", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(textFive.chars, {
+  scrollTrigger: {
+    trigger: ".five",
+    start: "top center",
+    end: "center center",
+    // markers: true,
+  },
+  opacity: 0,
+  y: -200,
+  delay: 1,
+  stagger: 0.1,
+});
 
-// gsap.from(textReview.chars, {
-//   scrollTrigger: {
-//     trigger: ".review",
-//     start: "-=150px top",
-//     end: "+=100px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   y: -200,
-//   duration: 1,
-//   stagger: 0.1,
-// });
+gsap.to(".five__bg-bottom", {
+  scrollTrigger: {
+    trigger: ".five",
+    start: "center top",
+    // markers: true,
+    scrub: true,
+  },
+  x: -270,
+  opacity: 0,
+});
 
-// let textShorts = new SplitType(".shorts .title-absolute", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(".team__title", {
+  scrollTrigger: {
+    trigger: ".six",
+    start: "top center",
+    // markers: true,
+  },
+  x: -1000,
+  opacity: 0,
+  duration: 1,
+});
 
-// gsap.from(textShorts.chars, {
-//   scrollTrigger: {
-//     trigger: ".shorts",
-//     start: "-=100px top",
-//     end: "+=100px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   y: -200,
-//   duration: 1,
-//   stagger: 0.1,
-// });
+gsap.from(".team__item", {
+  scrollTrigger: {
+    trigger: ".six",
+    start: "top center",
+    // markers: true,
+  },
+  stagger: 0.1,
+  opacity: 0,
+  y: -610,
+  delay: 1,
+});
 
-// gsap.from(".four__bg-top", {
-//   scrollTrigger: {
-//     trigger: ".three",
-//     start: "top top",
-//     end: "+=1000px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: -700,
-// });
+let textSix = new SplitType(".six .title-absolute", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(".four__bg-bottom", {
-//   scrollTrigger: {
-//     trigger: ".three",
-//     start: "top top",
-//     end: "+=600px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: 700,
-// });
+gsap.from(textSix.chars, {
+  scrollTrigger: {
+    trigger: ".six",
+    start: "top center",
+    // markers: true,
+  },
+  opacity: 0,
+  y: -200,
+  delay: 1,
+  stagger: 0.1,
+});
 
-// gsap.from(".five__item_last", {
-//   scrollTrigger: {
-//     trigger: ".four",
-//     start: "+=50px top",
-//     end: "+=100px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   y: -350,
-// });
+gsap.from(".events__item", {
+  scrollTrigger: {
+    trigger: ".seven",
+    start: "top bottom",
+    // markers: true,
+  },
+  x: 30,
+  opacity: 0,
+});
 
-// gsap.from(".five__item svg", {
-//   scrollTrigger: {
-//     trigger: ".four",
-//     start: "+=250px top",
-//     end: "+=200px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   y: 100,
-//   opacity: 0,
-// });
+let textSeven = new SplitType(".seven .title-absolute", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// let five = new SplitType(".five__title", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(textSeven.chars, {
+  scrollTrigger: {
+    trigger: ".seven",
+    start: "top center",
+    // markers: true,
+  },
+  opacity: 0,
+  y: -200,
+  delay: 1,
+  stagger: 0.1,
+});
 
-// gsap.from(five.chars, {
-//   opacity: 0.3,
-//   ease: "power1.out",
-//   stagger: 0.1,
-//   scrollTrigger: {
-//     trigger: ".four",
-//     start: "+=150px top",
-//     end: "+=350px",
-//     // markers: true,
-//     scrub: true,
-//   },
-// });
+gsap.from(".clients__row", {
+  scrollTrigger: {
+    trigger: ".eight",
+    start: "top bottom",
+    // markers: true,
+  },
+  opacity: 0,
+  x: -300,
+});
 
-// gsap.from(".individual__item", {
-//   scrollTrigger: {
-//     trigger: ".five",
-//     start: "-=100px top",
-//     end: "top +=600px",
-//     // markers: true,
-//   },
-//   opacity: 0,
-//   x: -70,
-// });
+let textEight = new SplitType(".eight .title-absolute", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(".five__bg-bottom", {
-//   scrollTrigger: {
-//     trigger: ".five",
-//     start: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: 170,
-// });
+gsap.from(textEight.chars, {
+  scrollTrigger: {
+    trigger: ".eight",
+    start: "top bottom",
+    // markers: true,
+  },
+  opacity: 0,
+  y: -200,
+  delay: 0.5,
+  stagger: 0.1,
+});
 
-// gsap.from(".team__item", {
-//   scrollTrigger: {
-//     trigger: ".five",
-//     start: "+900px top",
-//     // markers: true,
-//   },
-//   stagger: 0.1,
-//   opacity: 0,
-//   y: -1000,
-// });
+gsap.from(".review__bg-text", {
+  scrollTrigger: {
+    trigger: ".review",
+    start: "top bottom",
+    // markers: true,
+    scrub: true,
+  },
+  x: 300,
+});
 
-// gsap.from(".team__title", {
-//   scrollTrigger: {
-//     trigger: ".five",
-//     start: "+=950px top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   stagger: 0.1,
-//   x: -100,
-//   opacity: 0,
-// });
+gsap.from(".review__input", {
+  scrollTrigger: {
+    trigger: ".review",
+    start: "top center",
+    // markers: true,
+  },
+  y: 30,
+  opacity: 0,
+});
 
-// gsap.from(".events__item", {
-//   scrollTrigger: {
-//     trigger: ".six",
-//     start: "center",
-//     end: "bottom",
-//     // markers: true,
-//   },
-//   x: 30,
-//   opacity: 0,
-// });
+let textReview = new SplitType(".review .title-absolute", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(".clients__row", {
-//   scrollTrigger: {
-//     trigger: ".seven",
-//     start: "top center",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: -300,
-// });
+gsap.from(textReview.chars, {
+  scrollTrigger: {
+    trigger: ".review",
+    start: "top center",
+    // markers: true,
+  },
+  opacity: 0,
+  y: -200,
+  delay: 1,
+  stagger: 0.1,
+});
 
-// gsap.from(".review__bg-text", {
-//   scrollTrigger: {
-//     trigger: ".review",
-//     start: "-=500px top",
-//     end: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: 170,
-// });
+gsap.from(".shorts__bg-text", {
+  scrollTrigger: {
+    trigger: ".shorts",
+    start: "top bottom",
+    // markers: true,
+    scrub: true,
+  },
+  x: 300,
+});
 
-// gsap.from(".review__input", {
-//   scrollTrigger: {
-//     trigger: ".review",
-//     start: "-=300px top",
-//     end: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   y: 30,
-//   opacity: 0,
-// });
+gsap.from(".shorts__item", {
+  scrollTrigger: {
+    trigger: ".shorts",
+    start: "top center",
+    // markers: true,
+  },
+  x: -100,
+  opacity: 0,
+});
 
-// gsap.from(".shorts__bg-text", {
-//   scrollTrigger: {
-//     trigger: ".review",
-//     start: "-=250px top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: 170,
-// });
+let textShorts = new SplitType(".shorts .title-absolute", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(".shorts__item", {
-//   scrollTrigger: {
-//     trigger: ".review",
-//     start: "+=500px center",
-//     bottom: "+=300px bottom",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: -50,
-//   opacity: 0,
-// });
+gsap.from(textShorts.chars, {
+  scrollTrigger: {
+    trigger: ".shorts",
+    start: "top center",
+    // markers: true,
+  },
+  opacity: 0,
+  y: -200,
+  delay: 1,
+  stagger: 0.1,
+});
 
-// gsap.from(".about-us__bg-text", {
-//   scrollTrigger: {
-//     trigger: ".shorts",
-//     start: "+=150px top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: 170,
-// });
+gsap.from(".about-us__bg-text", {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "top bottom",
+    // markers: true,
+  },
+  x: 300,
+});
 
-// gsap.from(".about-us__one__img", {
-//   scrollTrigger: {
-//     trigger: ".shorts",
-//     start: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   y: -100,
-//   opacity: 0,
-// });
+gsap.from(".about-us__one__img", {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "top top",
+    // markers: true,
+  },
+  y: 300,
+  opacity: 0,
+});
 
-// let text1 = new SplitType(".about-us__one__title", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(".about-us__one__content", {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "top center",
+    // markers: true,
+  },
+  y: -300,
+  opacity: 0,
+});
 
-// gsap.from(text1.chars, {
-//   scrollTrigger: {
-//     trigger: ".about-us__bg-text",
-//     start: "-=300px top",
-//     end: "+=150px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: -200,
-//   opacity: 0,
-//   duration: 0.5,
-//   stagger: 0.1,
-// });
+let text1 = new SplitType(".about-us__one__title", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// let text2 = new SplitType(".about-us__two__title", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(text1.chars, {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "top center",
+    // markers: true,
+  },
+  x: -50,
+  opacity: 0,
+  delay: 0.5,
+  stagger: 0.1,
+});
 
-// gsap.from(text2.chars, {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "+=200px top",
-//     end: "500px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   x: -200,
-//   duration: 0.5,
-//   stagger: 0.1,
-// });
+let text2 = new SplitType(".about-us__two__title", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(".about-us__one__content p", {
-//   scrollTrigger: {
-//     trigger: ".about-us__bg-text",
-//     start: "-=200px top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   stagger: 1,
-//   x: -50,
-//   opacity: 0,
-// });
+if (window.innerWidth > 743) {
+  gsap.from(text2.chars, {
+    scrollTrigger: {
+      trigger: ".about-us__two",
+      start: "top center",
+      // markers: true,
+    },
+    x: -50,
+    opacity: 0,
+    delay: 0.5,
+    stagger: 0.1,
+  });
 
-// gsap.from(".about-us__two__content p", {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "+=200px top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   stagger: 1,
-//   x: -50,
-//   opacity: 0,
-// });
+  gsap.from(".about-us__two-bg-text", {
+    scrollTrigger: {
+      trigger: ".about-us__two",
+      start: "top bottom",
+      // markers: true,
+    },
+    x: 300,
+  });
 
-// gsap.from(".about-us__two-bg-text", {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "-=150px top",
-//     end: "700px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: 170,
-// });
+  gsap.from(".about-us__two__content", {
+    scrollTrigger: {
+      trigger: ".about-us__two",
+      start: "top center",
+      // markers: true,
+    },
+    y: -300,
+    opacity: 0,
+  });
 
-// gsap.from(".about-us__two__img img", {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "+=200px top",
-//     end: "1100px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   y: 300,
-// });
+  gsap.from(".about-us__two__img img", {
+    scrollTrigger: {
+      trigger: ".about-us__two",
+      start: "top center",
+      // markers: true,
+      scrub: true,
+    },
+    opacity: 0,
+    y: 300,
+  });
+} else {
+  gsap.from(text2.chars, {
+    scrollTrigger: {
+      trigger: ".about-us__two",
+      start: "top center",
+      // markers: true,
+    },
+    x: -50,
+    opacity: 0,
+    delay: 0.5,
+    stagger: 0.1,
+  });
 
-// gsap.from(".about-us__three-line", {
-//   scrollTrigger: {
-//     trigger: ".about-us__two",
-//     start: "+=150px top",
-//     end: "500px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   rotation: 90,
-// });
+  gsap.from(".about-us__two-bg-text", {
+    scrollTrigger: {
+      trigger: ".about-us__two",
+      start: "top bottom",
+      // markers: true,
+    },
+    x: 300,
+  });
 
-// let about_us = new SplitType(".about-us__three__title", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+  gsap.from(".about-us__two__content", {
+    scrollTrigger: {
+      trigger: ".about-us__two",
+      start: "top top",
+      // markers: true,
+    },
+    y: -300,
+    opacity: 0,
+  });
 
-// gsap.from(about_us.words, {
-//   opacity: 0.3,
-//   duration: 0.1,
-//   stagger: 0.1,
+  gsap.from(".about-us__two__img img", {
+    scrollTrigger: {
+      trigger: ".about-us__two",
+      start: "top bottom",
+      // markers: true,
+    },
+    opacity: 0,
+    y: 300,
+  });
+}
 
-//   scrollTrigger: {
-//     trigger: ".about-us__two",
-//     start: "+=200px top",
-//     end: "+=500px",
-//     // markers: true,
-//     scrub: true,
-//   },
-// });
+gsap.from(".about-us__three-line", {
+  scrollTrigger: {
+    trigger: ".about-us__three",
+    start: "top center",
+    // markers: true,
+  },
+  rotation: 90,
+});
 
-// let about_us_p = new SplitType(".about-us__three__text", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+let about_us = new SplitType(".about-us__three__title", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(about_us_p.lines, {
-//   y: "100%",
-//   opacity: 0,
-//   duration: 0.5,
-//   ease: "none.out",
-//   stagger: 0.1,
-//   scrollTrigger: {
-//     trigger: ".about-us__two",
-//     start: "+=200px top",
-//     end: "+=500px",
-//     // markers: true,
-//     scrub: true,
-//   },
-// });
+gsap.from(about_us.words, {
+  scrollTrigger: {
+    trigger: ".about-us__three",
+    start: "top center",
+    // markers: true,
+  },
+  opacity: 0,
+  duration: 0.1,
+  stagger: 0.1,
+});
 
-// gsap.from(".application__bg-text", {
-//   scrollTrigger: {
-//     trigger: ".about-us__two",
-//     start: "+=350px top",
-//     end: "1500px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: 170,
-// });
+let about_us_p = new SplitType(".about-us__three__text", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(".application__row", {
-//   scrollTrigger: {
-//     trigger: ".about-us__two",
-//     start: "+=500px top",
-//     end: "1300px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-// });
+gsap.from(about_us_p.lines, {
+  scrollTrigger: {
+    trigger: ".about-us__three",
+    start: "top center",
+    // markers: true,
+  },
+  y: "100%",
+  opacity: 0,
+  duration: 0.5,
+  ease: "none.out",
+  stagger: 0.1,
+});
 
-// gsap.from(".footer__bg-3", {
-//   scrollTrigger: {
-//     trigger: ".application__row",
-//     start: "-=250px top",
-//     end: "700px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   x: -300,
-// });
+gsap.from(".application__bg-text", {
+  scrollTrigger: {
+    trigger: ".application",
+    start: "top center",
+    scrub: true,
+    // markers: true,
+  },
+  x: 300,
+  duration: 0.5,
+});
 
-// gsap.from(".footer__bg-1", {
-//   scrollTrigger: {
-//     trigger: ".application__row",
-//     start: "-=250px top",
-//     end: "700px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   opacity: 0,
-//   x: 100,
-// });
+gsap.from(".application__row", {
+  scrollTrigger: {
+    trigger: ".application",
+    start: "top center",
+    // markers: true,
+  },
+  opacity: 0,
+  delay: 0.5,
+});
 
-// let footer_text_1 = new SplitType(".footer__contacts__title", {
-//   types: "lines, words, chars",
-//   tagName: "span",
-// });
+gsap.from(".footer__bg-3", {
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top center",
+    // markers: true,
+  },
+  opacity: 0,
+  x: -300,
+});
 
-// gsap.from(footer_text_1.chars, {
-//   y: "100%",
-//   opacity: 0,
-//   duration: 0.5,
-//   ease: "none.out",
-//   stagger: 0.1,
-//   scrollTrigger: {
-//     trigger: ".application__row",
-//     start: "top top",
-//     // markers: true,
-//     scrub: true,
-//   },
-// });
+gsap.from(".footer__bg-1", {
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top center",
+    // markers: true,
+  },
+  opacity: 0,
+  x: 300,
+});
 
-// gsap.from(".footer__contacts__tel", {
-//   scrollTrigger: {
-//     trigger: ".application__row",
-//     start: "top top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   y: "100%",
-//   opacity: 0,
-//   duration: 0.5,
-// });
+let footer_text_1 = new SplitType(".footer__contacts__title", {
+  types: "lines, words, chars",
+  tagName: "span",
+});
 
-// gsap.from(".footer__contacts__email", {
-//   scrollTrigger: {
-//     trigger: ".application__row",
-//     start: "+=300px top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   y: "100%",
-//   opacity: 0,
-//   duration: 0.5,
-// });
+gsap.from(footer_text_1.chars, {
+  x: -50,
+  opacity: 0,
+  stagger: 0.1,
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top center",
+    // markers: true,
+  },
+});
 
-// gsap.from(".footer__nav a", {
-//   scrollTrigger: {
-//     trigger: ".application__row",
-//     pin: true,
-//     start: "+=300px",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   x: -50,
-//   opacity: 0,
-//   stagger: 0.1,
-// });
+gsap.from(".footer__contacts__tel", {
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top center",
+    // markers: true,
+  },
+  y: "100%",
+  opacity: 0,
+  duration: 0.5,
+});
 
-// gsap.to(".header__line div", {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "-=100px top",
-//     end: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   background: "#fff",
-// });
+gsap.from(".footer__contacts__email", {
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top center",
+    // markers: true,
+  },
+  y: "100%",
+  opacity: 0,
+  duration: 0.5,
+});
 
-// gsap.registerPlugin(CSSRulePlugin);
+gsap.from(".footer__nav a", {
+  scrollTrigger: {
+    trigger: "footer",
+    start: "top center",
+    // markers: true,
+  },
+  x: -50,
+  opacity: 0,
+});
 
-// var rule = CSSRulePlugin.getRule(".header__line-left::before"); //get the rule
-// gsap.to(rule, {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "-=100px top",
-//     end: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   background: "#fff",
-// });
+gsap.to(".header__line div", {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "-=100px top",
+    end: "top",
+    // markers: true,
+    scrub: true,
+  },
+  background: "#fff",
+});
 
-// gsap.to(".header a", {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "-=100px top",
-//     end: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   color: "#fff",
-// });
+gsap.registerPlugin(CSSRulePlugin);
 
-// gsap.to(".header", {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "-=100px top",
-//     end: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   color: "#fff",
-// });
+var rule = CSSRulePlugin.getRule(".header__line-left::before"); //get the rule
+gsap.to(rule, {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "-=100px top",
+    end: "top",
+    // markers: true,
+    scrub: true,
+  },
+  background: "#fff",
+});
 
-// gsap.to(".burger__line", {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "-=100px top",
-//     end: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   background: "#fff",
-// });
+gsap.to(".header a", {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "-=100px top",
+    end: "top",
+    // markers: true,
+    scrub: true,
+  },
+  color: "#fff",
+});
 
-// gsap.to(".header__logo path", {
-//   scrollTrigger: {
-//     trigger: ".about-us",
-//     start: "-=100px top",
-//     end: "top",
-//     // markers: true,
-//     scrub: true,
-//   },
-//   fill: "#fff",
-// });
+gsap.to(".header", {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "-=100px top",
+    end: "top",
+    // markers: true,
+    scrub: true,
+  },
+  color: "#fff",
+});
+
+gsap.to(".burger__line", {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "-=100px top",
+    end: "top",
+    // markers: true,
+    scrub: true,
+  },
+  background: "#fff",
+});
+
+gsap.to(".header__logo path", {
+  scrollTrigger: {
+    trigger: ".about-us",
+    start: "-=100px top",
+    end: "top",
+    // markers: true,
+    scrub: true,
+  },
+  fill: "#fff",
+});

@@ -1,8 +1,8 @@
-<svg width="284" height="263" viewBox="0 0 284 263" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M210.25 174V174C248.632 170.466 278 138.27 278 99.7258V80.0198V80.0198C274.899 38.2813 240.13 6 198.276 6H96.5678C54.6721 6 19.1817 36.8715 13.3778 78.3633V78.3633C6.30991 128.891 45.5484 174 96.5679 174H116H183" stroke="#FFC700" stroke-width="11"/>
-<path d="M216 177.5L225.601 251.691C225.886 253.894 222.904 254.85 221.855 252.892L178 171" stroke="#FFC700" stroke-width="11"/>
-<rect x="104" y="116" width="81" height="10" rx="5" fill="#FFC700"/>
-<rect x="104" y="90" width="124" height="10" rx="5" fill="#FFC700"/>
-<rect x="104" y="64" width="124" height="10" rx="5" fill="#FFC700"/>
-<rect x="51" y="64" width="27" height="10" rx="5" fill="#FFC700"/>
+<svg width="375" height="340" viewBox="0 0 375 340" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path d="M262.25 214V214C300.632 210.466 330 178.27 330 139.726V120.02V120.02C326.899 78.2813 292.13 46 250.276 46H148.568C106.672 46 71.1817 76.8715 65.3778 118.363V118.363C58.3099 168.891 97.5484 214 148.568 214H168H235" stroke="#FFC700" stroke-width="11"/>
+<path d="M268 217.5L277.601 291.691C277.886 293.894 274.904 294.85 273.855 292.892L230 211" stroke="#FFC700" stroke-width="11"/>
+<rect x="156" y="156" width="81" height="10" rx="5" fill="#FFC700"/>
+<rect x="156" y="130" width="124" height="10" rx="5" fill="#FFC700"/>
+<rect x="156" y="104" width="124" height="10" rx="5" fill="#FFC700"/>
+<rect x="103" y="104" width="27" height="10" rx="5" fill="#FFC700"/>
 </svg>
