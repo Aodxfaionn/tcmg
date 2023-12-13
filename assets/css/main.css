@@ -643,6 +643,7 @@ section.two {
   cursor: pointer;
   margin-top: 28px;
   transition: 0.5s;
+  z-index: 1;
 }
 
 .individual__item:hover {
@@ -1854,22 +1855,24 @@ footer {
 
 .individual__content {
   position: absolute;
+  top: 0;
   padding-top: 27px;
   padding-bottom: 0px;
   margin-bottom: 90px;
   overflow: hidden;
   background: #f1f1f1;
-  transition: 0.5s;
-  /* transform: translateY(-100%); */
-  transform: scale(0);
+  transition: 0.3s;
+  transform: translateY(-100%);
+  /* transform: scale(0); */
   opacity: 0;
   visibility: hidden;
+  z-index: 1;
 }
 .individual__content.active {
   position: relative;
   transition: 0.5s;
-  transform: scale(1);
-  /* transform: translateY(0%); */
+  /* transform: scale(1); */
+  transform: translateY(0%);
   opacity: 1;
   visibility: visible;
 }
@@ -3267,7 +3270,7 @@ section .individual.two__circle-two {
     width: 89%;
   }
   .individual__item::before {
-    width: 67%;
+    width: 74%;
   }
   .individual__item_two::before {
     width: 69%;
@@ -3476,7 +3479,6 @@ section .individual.two__circle-two {
   }
   .individual__item_three .individual__text > img {
     right: 67px;
-    width: 287.727px;
   }
   .individual__kras {
     gap: 15px;
@@ -4969,13 +4971,13 @@ section .individual.two__circle-two {
   }
   .modal-menu .one__texts {
     position: absolute;
-    top: 450px;
+    top: 280px;
   }
   .modal-menu .header__contacts {
     gap: 0;
     flex-direction: column;
     position: absolute;
-    top: 280px;
+    top: 250px;
     left: 3%;
   }
   .modal-menu .one-bg__skulptura {
@@ -5024,6 +5026,6 @@ section .individual.two__circle-two {
 @media (max-width: 380px) {
   .modal-menu .one__texts {
     position: absolute;
-    top: 320px;
+    top: 290px;
   }
 }
