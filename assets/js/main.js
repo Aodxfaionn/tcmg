@@ -404,16 +404,28 @@ gsap.from(".four__bg-bottom", {
   x: 700,
 });
 
-gsap.from(".five__item_last", {
-  scrollTrigger: {
-    trigger: ".four",
-    start: "top",
-    end: "center",
-    // markers: true,
-  },
-  y: -350,
-  opacity: 0,
-});
+if (window.innerWidth > 743) {
+  gsap.from(".five__item_last", {
+    scrollTrigger: {
+      trigger: ".four",
+      start: "top",
+      end: "center",
+      // markers: true,
+    },
+    y: -350,
+    opacity: 0,
+  });
+} else {
+  gsap.from(".five__item_last", {
+    scrollTrigger: {
+      trigger: ".four",
+      start: "bottom bottom",
+      // markers: true,
+    },
+    y: -350,
+    opacity: 0,
+  });
+}
 
 gsap.from(".five__item svg", {
   scrollTrigger: {
@@ -432,23 +444,22 @@ let five = new SplitType(".five__title", {
 });
 
 if (window.innerWidth > 743) {
-gsap.from(five.chars, {
-  scrollTrigger: {
-    trigger: ".four",
-    start: "top",
-    end: "center",
-    // markers: true,
-  },
-  opacity: 0.3,
-  ease: "power1.out",
-  stagger: 0.1,
-});
-} else {
   gsap.from(five.chars, {
     scrollTrigger: {
       trigger: ".four",
       start: "top",
-      end: "-=50px center",
+      end: "center",
+      // markers: true,
+    },
+    opacity: 0.3,
+    ease: "power1.out",
+    stagger: 0.1,
+  });
+} else {
+  gsap.from(five.chars, {
+    scrollTrigger: {
+      trigger: ".four",
+      start: "bottom bottom",
       // markers: true,
     },
     opacity: 0.3,
@@ -890,16 +901,29 @@ gsap.from(about_us_p.lines, {
   stagger: 0.1,
 });
 
-gsap.from(".application__bg-text", {
-  scrollTrigger: {
-    trigger: ".application",
-    start: "top center",
-    scrub: true,
-    // markers: true,
-  },
-  x: 300,
-  duration: 0.5,
-});
+if (window.innerWidth > 1365) {
+  gsap.from(".application__bg-text", {
+    scrollTrigger: {
+      trigger: ".application",
+      start: "top center",
+      scrub: true,
+      // markers: true,
+    },
+    x: 300,
+    duration: 0.5,
+  });
+} else {
+  gsap.from(".application__bg-text", {
+    scrollTrigger: {
+      trigger: ".application",
+      start: "top center",
+      // scrub: true,
+      // markers: true,
+    },
+    x: 200,
+    duration: 0.5,
+  });
+}
 
 gsap.from(".application__row", {
   scrollTrigger: {
