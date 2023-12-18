@@ -1349,7 +1349,12 @@ section.two {
   line-height: 30px; /* 100% */
   letter-spacing: -1.5px;
 }
-
+.about-us__two__title-white {
+  color: #fefefe;
+}
+.about-us__two__title + .about-us__two__title-white {
+  margin-top: 23px;
+}
 .about-us__one__content,
 .about-us__two__content {
   margin-top: 57px;
@@ -1472,9 +1477,11 @@ section.two {
 
 .about-us__three__row {
   display: flex;
+  margin-left: 110px;
 }
 
 .about-us__one-block.about-us__three-line {
+  position: absolute;
   border-radius: 10px;
   background: var(--yel, #ffc700);
   width: 71px;
@@ -1592,13 +1599,16 @@ section.two {
 
 .application__select {
   position: relative;
-  margin-top: 78px;
+}
+
+.input-email {
+  margin-bottom: 50px;
 }
 
 .application__select::after {
   content: "";
   position: absolute;
-  bottom: 13px;
+  bottom: 0;
   right: 20px;
   display: inline-block;
   width: 21px;
@@ -1616,6 +1626,7 @@ section.two {
 }
 
 .application__btn {
+  width: 100%;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1623,7 +1634,6 @@ section.two {
   text-align: center;
   font-size: 20px;
   font-weight: 600;
-  line-height: 42px;
   border-radius: 40px;
   background: linear-gradient(91deg, #ffc700 10.56%, #ffc700 99.16%) !important;
   box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
@@ -2032,6 +2042,11 @@ section .individual.two__circle-two {
   margin-top: 180px;
 }
 
+.individual__two__approve {
+  margin: 100px 0 0;
+  font-style: italic;
+}
+
 .individual__three__item {
   display: flex;
   gap: 21px;
@@ -2047,6 +2062,7 @@ section .individual.two__circle-two {
   width: 13px;
   height: 21px;
   background: url("../img/pin.svg");
+  background-repeat: no-repeat;
 }
 
 .individual__three__hr {
@@ -2223,6 +2239,32 @@ section .individual.two__circle-two {
 
 .individual__five__item:nth-child(3) .five__application_block::before {
   background: url("../img/five__application_block-icon-3.svg") no-repeat;
+}
+
+.btn-big {
+  width: 100%;
+  height: 54px;
+  margin: 115px 0 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 40px;
+  background: #ffc700;
+  box-shadow: 0px 4px 4px 0px rgba(0, 0, 0, 0.25);
+  color: #fdfdfd;
+  font-family: "Inter";
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 22px;
+  transition: 0.5s;
+}
+
+.btn-big:hover {
+  background: #fd9653;
+}
+
+.btn-big::before {
+  content: none;
 }
 
 .five__classes_block .five__desc__row {
@@ -3737,6 +3779,7 @@ section .individual.two__circle-two {
     width: 100%;
   }
   .about-us__three__row {
+    margin-left: 0;
     gap: 0;
   }
   .about-us__one-block {
@@ -4139,11 +4182,11 @@ section .individual.two__circle-two {
 @media (max-width: 743px) {
   .preloader__circle {
     width: 323.518px;
-    height: 323.518px; 
+    height: 323.518px;
   }
   .preloader__circle:before {
     width: 53.149px;
-    height: 53.149px; 
+    height: 53.149px;
   }
   .container {
     max-width: 100% !important;
@@ -5048,13 +5091,65 @@ section .individual.two__circle-two {
   margin-top: 50px;
 }
 
-.modal-form .close {
+.modal-form .close,
+.modal-video .close,
+.modal-business .close {
   position: absolute;
   right: -10%;
   top: 5%;
   height: 38px;
   width: 38px;
   fill: #fff;
+}
+
+.modal-video .close,
+.modal-business .close {
+  right: -15%;
+  top: -2%;
+}
+
+.modal-video .close,
+.modal-business .close {
+  right: -3%;
+  top: 0;
+}
+
+.modal-video .modal__content {
+  position: relative;
+  max-width: 1170px;
+}
+
+.modal-business .modal__content {
+  position: relative;
+  height: 80%;
+  width: 80%;
+}
+
+.modal-business .individual__content {
+  position: relative;
+  opacity: 1;
+  visibility: visible;
+  margin-bottom: 0;
+}
+
+.modal-business .two__circle-one {
+  top: -59%;
+  transform: none;
+  left: 50%;
+}
+
+.modal-business .two__circle-two {
+  position: absolute;
+  top: -40%;
+  left: 75%;
+}
+
+.modal-business .two__circle-one-before {
+  width: 78px;
+  height: 80px;
+  transform-origin: unset;
+  left: 53.5%;
+  top: 8%;
 }
 
 @media (max-width: 1344px) {
@@ -5131,6 +5226,11 @@ section .individual.two__circle-two {
   .modal-form .close {
     right: calc((100% - 40px) / 2);
     top: -8%;
+  }
+  .modal-video .close,
+  .modal-business .close {
+    right: calc((100% - 40px) / 2);
+    top: -12%;
   }
   .modal-form .application:before {
     top: 27px;

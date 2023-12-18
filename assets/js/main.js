@@ -12,6 +12,14 @@ btnForm.forEach((btn) => {
   btn.addEventListener("click", () => openModal(modalForm));
 });
 
+// модальные окно с видео
+const btnPlay = document.querySelectorAll(".js-play");
+
+  btnPlay.forEach((btn) => {
+  btn.addEventListener("click", () => openModal(btn.nextElementSibling));
+});
+
+
 function openModal(modal) {
   modal.classList.add("open");
   modal.addEventListener("click", function (e) {
