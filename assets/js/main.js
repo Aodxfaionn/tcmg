@@ -1,33 +1,31 @@
 // бургерное меню
-const burger = document.querySelector(".burger"),
-  modalMenu = document.querySelector(".modal-menu");
-
-burger.addEventListener("click", () => openModal(modalMenu));
+// const burger = document.querySelector(".burger"),
+//   modalMenu = document.querySelector(".modal-menu");
+// burger.addEventListener("click", () => openModal(modalMenu));
 
 // модальные окна с формой заявки
-const btnForm = document.querySelectorAll(".js-form"),
-  modalForm = document.querySelector(".modal-form");
+// const btnForm = document.querySelectorAll(".js-form"),
+//   modalForm = document.querySelector(".modal-form");
 
-btnForm.forEach((btn) => {
-  btn.addEventListener("click", () => openModal(modalForm));
-});
+// btnForm.forEach((btn) => {
+//   btn.addEventListener("click", () => openModal(modalForm));
+// });
 
-// модальные окно с видео
-const btnPlay = document.querySelectorAll(".js-play");
+// // модальные окно с видео
+// const btnPlay = document.querySelectorAll(".js-play");
+//   btnPlay.forEach((btn) => {
+//   btn.addEventListener("click", () => openModal(btn.nextElementSibling));
+// });
 
-  btnPlay.forEach((btn) => {
-  btn.addEventListener("click", () => openModal(btn.nextElementSibling));
-});
 
-
-function openModal(modal) {
-  modal.classList.add("open");
-  modal.addEventListener("click", function (e) {
-    const close = modal.querySelector(".close");
-    if (e.target == modal) modal.classList.remove("open");
-    if (e.target == close) modal.classList.remove("open");
-  });
-}
+// function openModal(modal) {
+//   modal.classList.add("open");
+//   modal.addEventListener("click", function (e) {
+//     const close = modal.querySelector(".close");
+//     if (e.target == modal) modal.classList.remove("open");
+//     if (e.target == close) modal.classList.remove("open");
+//   });
+// }
 
 $(window).scroll(function () {
   if ($(this).scrollTop() > 1 && screen.width >= 979) {

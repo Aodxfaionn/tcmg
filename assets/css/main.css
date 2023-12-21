@@ -3509,7 +3509,7 @@ section .individual.two__circle-two {
     margin: auto;
   }
   .three__text {
-    width: 333px;
+    width: 450px;
   }
   .three__btn {
     width: 50%;
@@ -5093,7 +5093,8 @@ section .individual.two__circle-two {
 
 .modal-form .close,
 .modal-video .close,
-.modal-business .close {
+.modal-business .close,
+.modal-event .close {
   position: absolute;
   right: -10%;
   top: 5%;
@@ -5103,13 +5104,8 @@ section .individual.two__circle-two {
 }
 
 .modal-video .close,
-.modal-business .close {
-  right: -15%;
-  top: -2%;
-}
-
-.modal-video .close,
-.modal-business .close {
+.modal-business .close,
+.modal-event .close {
   right: -3%;
   top: 0;
 }
@@ -5119,32 +5115,46 @@ section .individual.two__circle-two {
   max-width: 1170px;
 }
 
-.modal-business .modal__content {
+.modal-business .modal__content,
+.modal-event .modal__content {
   position: relative;
   height: 80%;
   width: 80%;
 }
 
-.modal-business .individual__content {
+.modal-business .individual__content,
+.modal-event .individual__content {
   position: relative;
   opacity: 1;
   visibility: visible;
   margin-bottom: 0;
 }
 
-.modal-business .two__circle-one {
+.modal-business .two__circle-one,
+.modal-event .two__circle-one {
   top: -59%;
   transform: none;
   left: 50%;
 }
 
-.modal-business .two__circle-two {
+.modal-event .two__circle-one {
+  top: -10.5%;
+}
+
+.modal-business .two__circle-two,
+.modal-event .two__circle-two {
   position: absolute;
   top: -40%;
   left: 75%;
 }
 
-.modal-business .two__circle-one-before {
+.modal-event .two__circle-two {
+  top: -6%;
+  z-index: 0;
+}
+
+.modal-business .two__circle-one-before,
+.modal-event .two__circle-one-before {
   width: 78px;
   height: 80px;
   transform-origin: unset;
@@ -5152,9 +5162,111 @@ section .individual.two__circle-two {
   top: 8%;
 }
 
-@media (max-width: 1344px) {
+.modal-event .two__circle-one-before {
+  left: 50.5%;
+  top: 4.5%;
+}
+
+.modal__content .individual__content__container {
+  padding-top: 88px;
+}
+
+.modal-event .individual__one {
+  max-width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: start;
+}
+
+.modal-event .individual__one > div:first-of-type {
+  max-width: 818px;
+}
+
+.modal-event .individual__one_date {
+  display: flex;
+  gap: 35px;
+}
+
+.individual__content_hr-brown {
+  width: 56px;
+  height: 6px;
+  background: #dbcbb3;
+}
+
+.modal-event .individual__content_title {
+  margin-top: 160px;
+}
+
+.modal-event__img {
+  position: relative;
+  left: 70px;
+  bottom: 40px;
+}
+
+@media (max-width: 1919px) {
+  .modal__content .individual__content__container {
+    padding-top: 40px;
+  }
+  .modal-event .individual__content_title {
+    margin-top: 120px;
+  }
+  .modal-event__img {
+    width: 384px;
+    height: 384px;
+    left: 40px;
+  }
+  .modal-event .two__circle-one {
+    width: 832px;
+    height: 832px;
+    top: -9.5%;
+    left: 51%;
+  }
+  .modal-event .two__circle-one-before {
+    display: block;
+    left: 53%;
+    top: 4.5%;
+  }
+  .modal-event .two__circle-two {
+    top: -8%;
+  }
+}
+
+@media (max-width: 1365px) {
   .modal-form .application__title {
     font-size: 22px;
+  }
+  .modal-event .individual__one > div:first-of-type {
+    max-width: 100%;
+  }
+  .modal-event .individual__one {
+    flex-direction: column-reverse;
+    justify-content: center;
+  }
+  .modal-video .close,
+  .modal-business .close,
+  .modal-event .close {
+    right: -6%;
+  }
+  .modal-event .two__circle-one {
+    width: 581.667px;
+    height: 581.667px;
+    top: 5%;
+    left: 34%;
+    transform: rotate(95deg);
+  }
+  .modal-event__img {
+    width: 384px;
+    height: 384px;
+    position: static;
+    margin: 0 auto 40px;
+  }
+  .modal-event .individual__content_title {
+    margin-top: 30px;
+  }
+  .modal-event .two__circle-two {
+    width: 633.819px;
+    height: 606.95px;
+    top: 5%;
   }
 }
 
@@ -5223,14 +5335,22 @@ section .individual.two__circle-two {
     left: 60%;
     transform: rotate(94deg);
   }
+  .modal-business .modal__content,
+  .modal-event .modal__content {
+    width: 95%;
+  }
   .modal-form .close {
     right: calc((100% - 40px) / 2);
     top: -8%;
   }
   .modal-video .close,
-  .modal-business .close {
+  .modal-business .close,
+  .modal-event .close {
     right: calc((100% - 40px) / 2);
-    top: -12%;
+    top: -7%;
+  }
+  .modal-video .close {
+    top: -13%;
   }
   .modal-form .application:before {
     top: 27px;
